@@ -37,13 +37,15 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
+	$(INSTALL_DIR) $(1)/usr/lib
+	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/* $(1)/usr/include/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/*.so* $(1)/usr/lib/
-	
-	$(INSTALL_DIR) $(1)/usr/lib/pkgconfig
-	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libndp.pc \
-		$(1)/usr/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/usr/lib/pkgconfig/libndp.pc $(1)/usr/lib/pkgconfig
+	$(SED) 's,/usr/bin,/usr,g' $(1)/usr/lib/pkgconfig/libndp.pc
+	$(SED) 's,/usr/include,$$$${prefix}/include,g' $(1)/usr/lib/pkgconfig/libndp.pc
+	$(SED) 's,/usr/lib,$$$${exec_prefix}/lib,g' $(1)/usr/lib/pkgconfig/libndp.pc
+	$(SED) 's,/usr/bin,/usr,g' $(1)/usr/lib/pkgconfig/libndp.pc
 endef
 
 
