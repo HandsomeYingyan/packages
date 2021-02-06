@@ -121,6 +121,9 @@ CONFIGURE_ARGS += \
 	--disable-dts \
 	--disable-resindvd \
 	--disable-faac \
+	--enable-fdkaac \
+	--enable-videoparsers \
+	--enable-videosignal \
 	--disable-faad \
 	--disable-flite \
 	--disable-gsm \
@@ -257,9 +260,11 @@ $(eval $(call GstBuildPlugin,jpegformat,jpegformat support,tag,,))
 $(eval $(call GstBuildPlugin,mpegpsdemux,mpegpsdemux support,pbutils,,))
 $(eval $(call GstBuildPlugin,mpegpsmux,mpegpsmux support,,,))
 #$(eval $(call GstBuildPlugin,mpegtsdemux,mpegtsdemux support,mpegts pbutils,,))
-#$(eval $(call GstBuildPlugin,mpegtsmux,mpegtsmux support,video,,))
+$(eval $(call GstBuildPlugin,videoparsers,videoparsers support,video,,))
+$(eval $(call GstBuildPlugin,videosignal,videosignal support,video,,))
 $(eval $(call GstBuildPlugin,mxf,mxf support,audio video,,))
 $(eval $(call GstBuildPlugin,opusparse,OPUS streams library,pbutils,,+libopus))
+$(eval $(call GstBuildPlugin,fdkaac,Fraunhofer FDK AAC encoding library,,,+fdk-aac))
 $(eval $(call GstBuildPlugin,pcapparse,pcapparse support,,,))
 $(eval $(call GstBuildPlugin,pnm,pnm support,video,,))
 #$(eval $(call GstBuildPlugin,rawparse,rawparse support,audio video,,))
