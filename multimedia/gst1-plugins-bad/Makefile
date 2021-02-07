@@ -189,7 +189,7 @@ MESON_ARGS += \
 	-Dfaac=disabled \
 	$(call GST_COND_SELECT,faad) \
 	-Dfbdev=$(if $(CONFIG_PACKAGE_gst1-mod-fbdevsink),en,dis)abled \
-	-Dfdkaac=enable \
+	-Dfdkaac=enabled \
 	-Dflite=disabled \
 	-Dfluidsynth=disabled \
 	-Dgl=disabled \
@@ -402,9 +402,9 @@ $(eval $(call GstBuildPlugin,subenc,subenc support,controller,,))
 #$(eval $(call GstBuildPlugin,srtp,srtp support,rtp,,+libsrtp))
 $(eval $(call GstBuildPlugin,fdkaac,Fraunhofer FDK AAC encoding library,,,+fdk-aac))
 $(eval $(call GstBuildPlugin,timecode,timecode support,,,))
-$(eval $(call GstBuildPlugin,videofiltersbad,videofiltersbad support,codecparsers,,))
+$(eval $(call GstBuildPlugin,videofiltersbad,videofiltersbad support,,,))
 $(eval $(call GstBuildPlugin,videoframe_audiolevel,videoframe_audiolevel support,,,))
-$(eval $(call GstBuildPlugin,videoparsersbad,videoparsersbad support,,,))
+$(eval $(call GstBuildPlugin,videoparsersbad,videoparsersbad support,codecparsers,,))
 $(eval $(call GstBuildPlugin,videosignal,videosignal support,,,))
 $(eval $(call GstBuildPlugin,vmnc,vmnc support,,,))
 $(eval $(call GstBuildPlugin,webp,webp support,,,+libwebp))
