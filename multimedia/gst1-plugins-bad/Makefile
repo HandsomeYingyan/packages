@@ -300,6 +300,7 @@ $(eval $(call GstBuildLibrary,adaptivedemux,adaptivedemux,app uridownloader,))
 $(eval $(call GstBuildLibrary,photography,photography,,))
 $(eval $(call GstBuildLibrary,basecamerabinsrc,basecamerabinsrc,app,))
 $(eval $(call GstBuildLibrary,uridownloader,uridownloader,,))
+$(eval $(call GstBuildLibrary,codecparsers,codecparsers,,))
 
 # 1: short name
 # 2: description
@@ -349,7 +350,6 @@ $(eval $(call GstBuildPlugin,autoconvert,autoconvert support,,,))
 $(eval $(call GstBuildPlugin,bayer,bayer support,video,,))
 $(eval $(call GstBuildPlugin,bluez,bluez support,,,+bluez-libs))
 $(eval $(call GstBuildPlugin,bz2,bzip2 support,,,+libbz2))
-$(eval $(call GstBuildLibrary,codecparsers,codecparsers,,))
 $(eval $(call GstBuildPlugin,camerabin,camerabin support,basecamerabinsrc photography pbutils app,,))
 $(eval $(call GstBuildPlugin,coloreffects,coloreffects support,video,,))
 $(eval $(call GstBuildPlugin,dataurisrc,dataurisrc support,,,))
