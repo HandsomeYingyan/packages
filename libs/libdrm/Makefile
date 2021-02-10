@@ -26,7 +26,7 @@ include ../../devel/meson/meson.mk
 define Package/libdrm
   SECTION:=libs
   CATEGORY:=Libraries
-  DEPENDS:=+libpciaccess +eudev
+  DEPENDS:=+libpciaccess
   TITLE:=libdrm
   URL:=https://dri.freedesktop.org/
 endef
@@ -44,7 +44,7 @@ MESON_ARGS += \
 	-Dman-pages=false \
 	-Dvalgrind=false \
 	-Dinstall-test-programs=false \
-	-Dudev=true
+	-Dudev=false
 
 
 ifeq ($(ARCH),arm)
@@ -59,7 +59,7 @@ ifeq ($(ARCH),arm)
 	-Dexynos=true \
 	-Dfreedreno=true \
 	-Dtegra=true \
-	-Dvc4=true	   	
+	-Dvc4=true  	
 else ifeq ($(ARCH),aarch64)
     MESON_ARGS += \
     	-Dintel=false \
@@ -93,6 +93,19 @@ else ifeq ($(ARCH),x86_64)
 	-Damdgpu=true \
 	-Dnouveau=true \
 	-Dvmwgfx=true \
+	-Domap=false \
+	-Dfreedreno-kgsl=false \
+	-Dexynos=false \
+	-Dfreedreno=false \
+	-Dtegra=false \
+	-Dvc4=false
+else
+    MESON_ARGS += \
+    	-Dintel=false \
+ 	-Dradeon=false \
+	-Damdgpu=false \
+	-Dnouveau=false \
+	-Dvmwgfx=false \
 	-Domap=false \
 	-Dfreedreno-kgsl=false \
 	-Dexynos=false \
