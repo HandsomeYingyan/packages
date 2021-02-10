@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=python-mako
-PKG_VERSION:=1.0.7
+PKG_VERSION:=1.1.4
 PKG_RELEASE:=1
 
 PKG_SOURCE:=Mako-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://files.pythonhosted.org/packages/source/m/mako/
-PKG_HASH:=4e02fde57bd4abb5ec400181e4c314f56ac3e49ba4fb8b0d50bba18cb27d25ae
+PKG_HASH:=17831f0b7087c313c0ffae2bcbbd3c1d5ba9eeac9c38f2eb7b50e8c99fe9d5ab
 
-HOST_BUILD_DEPENDS:=python/host
+HOST_BUILD_DEPENDS:=python3/host
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(BUILD_VARIANT)-mako-$(PKG_VERSION)
 
@@ -65,7 +65,7 @@ $(call Package/python-mako/description)
 endef
 
 define Host/Compile
-        $(call Build/Compile/HostPyMod,,install --prefix="" --root="$(STAGING_DIR_HOSTPKG)")
+        $(call Build/Compile/HostPy3Mod,,install --prefix="" --root="$(STAGING_DIR_HOSTPKG)")
 endef
 
 Host/Install:=
