@@ -219,6 +219,7 @@ MESON_ARGS += \
 	-Dopenni2=disabled \
 	-Dopensles=disabled \
 	-Dopus=$(if $(CONFIG_PACKAGE_gst1-mod-opusparse),en,dis)abled \
+	-Dkms=$(if $(CONFIG_PACKAGE_gst1-mod-kmssink),en,dis)abled \
 	-Dresindvd=disabled \
 	-Drsvg=disabled \
 	-Drtmp=disabled \
@@ -360,6 +361,7 @@ $(eval $(call GstBuildPlugin,dvdspu,dvdspu support,video,,))
 $(eval $(call GstBuildPlugin,faad,faad support,audio,,+libfaad2))
 $(eval $(call GstBuildPlugin,faceoverlay,faceoverlay support,pbutils,,))
 $(eval $(call GstBuildPlugin,fbdevsink,fbdev support,video,,))
+$(eval $(call GstBuildPlugin,kmssink,DRM support,video,,+libdrm))
 $(eval $(call GstBuildPlugin,festival,festival support,audio,,))
 $(eval $(call GstBuildPlugin,fieldanalysis,fieldanalysis support,audio,,))
 $(eval $(call GstBuildPlugin,freeverb,freeverb support,,,))

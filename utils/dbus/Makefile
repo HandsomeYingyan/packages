@@ -79,7 +79,6 @@ CONFIGURE_ARGS += \
 	--enable-debug=no \
 	--enable-shared \
 	--disable-static \
-	--disable-verbose-mode \
 	--disable-asserts \
 	--disable-xml-docs \
 	--disable-doxygen-docs \
@@ -93,7 +92,6 @@ CONFIGURE_ARGS += \
 	--disable-systemd \
 	--disable-tests \
 	--disable-code-coverage \
-	--disable-x11-autolaunch \
 	--with-session-socket-dir=/tmp \
 	--with-system-socket=/var/run/dbus/system_bus_socket \
 	--with-system-pid-file=/var/run/dbus.pid \
@@ -120,7 +118,6 @@ HOST_CONFIGURE_ARGS+= \
 	--disable-systemd \
 	--disable-tests \
 	--disable-code-coverage \
-	--disable-x11-autolaunch \
 	--with-system-socket="$(STAGING_DIR_HOSTPKG)/var/run/dbus/system_bus_socket" \
 	--with-system-pid-file="$(STAGING_DIR_HOSTPKG)/var/run/dbus.pid" \
 	--with-dbus-daemondir="$(STAGING_DIR_HOSTPKG)/bin" \
