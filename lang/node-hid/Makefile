@@ -31,7 +31,7 @@ define Package/node-hid
   CATEGORY:=Languages
   TITLE:=Node.js package to access HID devices
   URL:=https://github.com/node-hid/node-hid
-  DEPENDS:=+node +node-npm +libusb-1.0 +hidapi +eudev
+  DEPENDS:=+node +node-npm +libusb-1.0 +hidapi +libudev
 endef
 
 define Package/node-hid/description
